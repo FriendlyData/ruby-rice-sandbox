@@ -14,10 +14,10 @@ LDFLAGS=
 LDFLAGS+= -shared
 LDFLAGS+= -ldl -lpthread
 
-CPPFLAGS+= -I./.rbenv/versions/2.3.1/include/ruby-2.3.0/
-CPPFLAGS+= -I./.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-linux/
-CPPFLAGS+= -I./.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rice-2.1.2
-LDFLAGS+= ./.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rice-2.1.2/rice/librice.a
+CPPFLAGS+= -I${HOME}/.rbenv/versions/2.3.1/include/ruby-2.3.0/
+CPPFLAGS+= -I${HOME}/.rbenv/versions/2.3.1/include/ruby-2.3.0/x86_64-linux/
+CPPFLAGS+= -I${HOME}/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rice-2.1.2
+LDFLAGS+= ${HOME}/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rice-2.1.2/rice/librice.a
 
 test: ${OUT_DIR}/lib.so
 	ruby -e "require './${OUT_DIR}/lib'; gt = RiceTest.new(); puts gt.run(\"OK\");" && echo OK || echo WA
