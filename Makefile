@@ -8,7 +8,7 @@ else
 endif
 
 test: native/lib.${SO}
-	ruby -e "require './native/lib'; gt = RiceTest.new(); puts gt.run(\"OK\");" && echo OK || echo WA
+	ruby -e 'require "./native/lib"; gt = RiceTest.new(); puts gt.run("OK");' && echo OK || echo WA
 
 native/%.${SO}: %.cc
 	mkdir -p native/

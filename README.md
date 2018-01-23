@@ -53,7 +53,7 @@ git clone https://github.com/FriendlyData/ruby-rice-sandbox.git
 The last three lines of the output (or the only three lines, if you run the same `make` command again), should be:
 
 ```
-ruby -e "require './out/lib'; gt = RiceTest.new(); puts gt.run(\"OK\");" && echo OK || echo WA
+ruby -e 'require "./native/lib"; gt = RiceTest.new(); puts gt.run("OK");' && echo OK || echo WA
 <passed>OK</passed>
 OK
 ```
