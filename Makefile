@@ -26,7 +26,7 @@ clean:
 	rm -rf "${OUT_DIR}"
 
 pack:
-	@rm -f ${ARCHIVE} && tar czf ${ARCHIVE} lib.cc Makefile  rice.h
+	@rm -f ${ARCHIVE} && tar czf ${ARCHIVE} lib.cc Makefile
 	@echo 'cat <<EOF | base64 --decode | tar xz'
 	@base64 ${ARCHIVE}
 	@echo 'EOF'
