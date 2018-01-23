@@ -57,3 +57,19 @@ ruby -e 'require "./native/lib"; gt = RiceTest.new(); puts gt.run("OK");' && ech
 <passed>OK</passed>
 OK
 ```
+
+# Semaphore
+
+[![Build Status](https://semaphoreci.com/api/v1/friendly-data/ruby-rice-sandbox/branches/master/badge.svg)](https://semaphoreci.com/friendly-data/ruby-rice-sandbox)
+
+I have configured Semaphore to pass the tests within this repo with the following commands:
+
+```
+sudo apt-get update
+sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+CONFIGURE_OPTS="--enable-shared" rbenv install -f 2.3.1
+rbenv local 2.3.1
+sudo apt-get install -y build-essential autoconf
+gem install rice -v 2.1.2
+make
+```
